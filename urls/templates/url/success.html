@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Success{% endblock title %}
+{% block content %}
+<!-- {% if current_user.is_authenticated %} -->
+<h2>{{ current_user.username }}! <span class="wave">👋🏾</span></h2>
+<br>
+
+<table>
+        <th>Original Url</th>
+        <th>Shortened Url</th>
+        <th>Clicks</th>
+        <th>QRcode</th>
+
+        <tr>
+            <td>{{new_link.org_url}}</td>
+            <td>{{request.host_url}}{{new_link.short_id}}</td>
+            <td>{{new_link.clicks}}</td>
+            <td>{{new_link.qr_code}}</td>
+        </tr>
+        
+    </table>
+
+<!-- {% else %}
+<div class="logo-container">
+  <img
+    src="{{url_for('static',filename= 'scissor-logo/vector/default-monochrome.svg')}}"
+    alt="Logo"
+    width="50%"
+    class="logo"
+  />
+</div> -->
+<h3>...brief is the new black</h3>
+<small>
+  <a href="{{url_for('auth.register')}}">Sign up</a> or <a href="{{url_for('auth.login')}}">log in</a> to shorten links for free
+</small>
+<!-- {% endif %} -->
+{% endblock content %}

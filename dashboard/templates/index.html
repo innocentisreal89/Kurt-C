@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block title %}Link Shortener{% endblock title %}
+{% block content %}
+{% if current_user.is_authenticated %}
+<h2>Welcome, {{ current_user.username }}! <span class="wave">👋🏾</span></h2>
+<br>
+    {% if urls %}
+        <table>
+                <th>Original Url</th>
+                <th>Shortened Url</th>
+                <th>Clicks</th>
+                <th>QRcode</th>
+                <th>Date Created</th>
+                <th>Options</th>
+                {% for urd in urls %}
+                <tr>
+                    <td><a href="{{urd.org_url}}">{{urd.org_url}}</a></td>
+                    <td><a href="{{url_for('url.redirect_url',short_id=urd.short_id)}}">{{request.host_url}}{{urd.short_id}}</a></td>
+                    <td>{{urd.clicks}}</td>
+                    <td><img class="card-qrcode" src="{{ url_for('url.qr_code', short_id=urd.short_id)}}" alt="QR Code">
+                    <br>
+                    <a href="{{url_for('url.qr_code', short_id=urd.short_id)}}", download="QR_code">Download QRcode </a></td>
+                    <!-- <td><a href="/{url.short_id}/qr_code">View QRcode </a></td> -->
+                    <td><small>{{urd.created.strftime('%B %d, %Y')}}</small></td>
+                </tr>
+                <tr>
+                  <td><a href="{{url_for('url.delete', short_id=urd.short_id)}}">
+                  <button class="button">Delete Link</button>
+                  </a> ||
+                  
+                </tr>
+            </table>
+            {% endfor %}
+    {% else %}
+        <div>
+          <p>...Brief is the new black. To shorten link, click <a href="{{url_for('url.shorten_url')}}">here</a> </p>
+        </div>
+    {% endif %}
+    {% else %}
+<div class="logo-container">
+  <!-- <img
+    src="{{url_for('static',filename= 'scissor-logo/vector/default-monochrome.svg')}}"
+    alt="Logo"
+    width="50%"
+    class="logo"
+  /> -->
+</div>
+<h3>...brief is the new black</h3>
+<small>
+  <a href="{{url_for('auth.register')}}">Sign up</a> or <a href="{{url_for('auth.login')}}">log in</a> to shorten links for free
+</small>
+{% endif %}
+{% endblock content %}

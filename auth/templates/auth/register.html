@@ -1,0 +1,44 @@
+{% extends 'base.html' %} 
+{% block title %} Register {% endblock %} 
+{% block content %}
+<h1>Sign Up screen</h1>
+
+<form method="post" class="signup" action="{{url_for('auth.register')}}">
+  <div>
+    <input type="text" id="username" name="username" placeholder="Username" />
+  </div>
+  <div>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="example@domain.com"
+    />
+  </div>
+  <div>
+    <input
+      type="password"
+      id="password1"
+      name="password"
+      placeholder="Enter Password"
+    />
+  </div>
+  <div>
+    <input
+      type="password"
+      id="password2"
+      name="confirm_password"
+      placeholder="Confirm Password"
+    />
+  </div>
+
+  <div>
+    <button type="submit">Submit</button>
+  </div>
+  <div>
+    <small>
+       Click <a href="{{url_for('auth.login')}}">here</a> to Login
+    </small>
+  </div>
+</form>
+{% endblock content %}
