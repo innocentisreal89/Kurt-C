@@ -1,0 +1,45 @@
+.form{
+    width: 40%;
+    margin: auto;
+    border: 2px solid blue;
+}
+.form-group{
+    padding: 10px;
+   
+}
+.form-control{
+    width: 100%;
+    /* padding: 10px; */
+    border: 1px solid rgb(177, 25, 25);
+    padding: 8px 10px;
+    border-radius: 4px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    /* outline-color: whitesmoke; */
+    border: 1px solid var(--background-color);
+    background-color: rgb(229, 222, 222);
+}
+.mybtn{
+    padding: 20px;
+    background-color: black; 
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+    transition: all 1.2s; 
+    /* transition: 0.3s;  */
+    cursor: pointer;
+}
+.mybtn:hover{
+    background-color: darkslategray;
+}
+label{
+    font-size: 1.2em;
+    font-weight: lighter;
+    margin: 5px  auto;
+    color: rgba(0, 0, 7, 0.851);
+    
+}
+.asterisk{
+    color: red;
+}

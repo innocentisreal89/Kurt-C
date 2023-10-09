@@ -1,6 +1,15 @@
 from db import db
-from flask_login import UserMixin
+from flask_login import UserMixin, current_user
+from functools import wraps
+from flask_smorest import abort
+from datetime import datetime
+import operator, random
 
+
+def code_gen(prefix):
+    code = random.randint(1000,90000)
+    code = str(code)
+    return prefix + code
 
 
 class Admin(db.Model,UserMixin):
@@ -29,7 +38,21 @@ class Admin(db.Model,UserMixin):
         db.session.commit()
 
     
+def admin_required(function):
+    @wraps(function)
+    def wrapper(*args, **kwarg):
+        loggedUser = current_user #getting the logged in user identity
+        #checking if the user is an admin
+        if not loggedUser.endswith('io.ict.ng'):
+            abort(401, message="Restricted Access")
+        return function(*args, **kwarg)
+    return wrapper
 
+# print(check_last_email_char(email))
+def check_last_email_char(str):
+    n = 9
+    str2 = operator.getitem(str, slice(len(str)-n, len(str)))
+    return str2
 
 
 

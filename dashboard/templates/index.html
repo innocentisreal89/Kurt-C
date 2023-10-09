@@ -1,36 +1,62 @@
 {% extends 'base.html' %}
-{% block title %}Link Shortener{% endblock title %}
+{% block title %}Dashboard{% endblock title %}
 {% block content %}
 {% if current_user.is_authenticated %}
 <h2>Welcome, {{ current_user.username }}! <span class="wave">👋🏾</span></h2>
 <br>
     {% if urls %}
-        <table>
-                <th>Original Url</th>
-                <th>Shortened Url</th>
-                <th>Clicks</th>
-                <th>QRcode</th>
-                <th>Date Created</th>
-                <th>Options</th>
+        <!-- <table >
+                <th class="table_head">Original Url</th>
+                <th class="table_head">Shortened Url</th>
+                <th class="table_head">Clicks</th>
+                <th class="table_head">QRcode</th>
+                <th class="table_head">Date Created</th>
+                <th class="table_head"></th>
                 {% for urd in urls %}
                 <tr>
-                    <td><a href="{{urd.org_url}}">{{urd.org_url}}</a></td>
-                    <td><a href="{{url_for('url.redirect_url',short_id=urd.short_id)}}">{{request.host_url}}{{urd.short_id}}</a></td>
-                    <td>{{urd.clicks}}</td>
-                    <td><img class="card-qrcode" src="{{ url_for('url.qr_code', short_id=urd.short_id)}}" alt="QR Code">
+                    <td class="table-data"><a href="{{urd.org_url}}">{{urd.org_url}}</a></td>
+                    <td class="table-data"><a href="{{url_for('url.redirect_url',short_id=urd.short_id)}}">{{request.host_url}}{{urd.short_id}}</a></td>
+                    <td class="table-data">{{urd.clicks}}</td>
+                    <td class="table-data"><img class="card-qrcode" src="{{ url_for('url.qr_code', short_id=urd.short_id)}}" alt="QR Code">
                     <br>
                     <a href="{{url_for('url.qr_code', short_id=urd.short_id)}}", download="QR_code">Download QRcode </a></td>
-                    <!-- <td><a href="/{url.short_id}/qr_code">View QRcode </a></td> -->
-                    <td><small>{{urd.created.strftime('%B %d, %Y')}}</small></td>
+                    <td><a href="/{url.short_id}/qr_code">View QRcode </a></td>
+                    <td class="table-data"><small>{{urd.created.strftime('%B %d, %Y')}}</small></td>
+                    <td><a href="{{url_for('url.delete', short_id=urd.short_id)}}">
+                    <button class="button">Delete Link</button></a> ||</td>
                 </tr>
-                <tr>
+                 <tr>
                   <td><a href="{{url_for('url.delete', short_id=urd.short_id)}}">
                   <button class="button">Delete Link</button>
                   </a> ||
                   
-                </tr>
-            </table>
-            {% endfor %}
+                </tr> -->
+        <!-- </table> -->
+            
+            <!-- {% endfor %} --> 
+        <section class="grid-container">
+              <div class="tab-head">Original Link</div>
+              <div class="tab-head">New Link</div>
+              <div class="tab-head">Clicks</div>
+              <div class="tab-head">QRcode</div>
+              <div class="tab-head">Created</div>
+              <div class="tab-head"></div>
+              {% for urd in urls %}
+                <div class="tab-data"><a href="{{urd.org_url}}" class="link">{{urd.org_url}}</a></div>
+                <div class="tab-data"><a href="{{url_for('url.redirect_url',short_id=urd.short_id)}}" class="link">{{request.host_url}}{{urd.short_id}}</a></div>
+                <div class="tab-data">{{urd.clicks}}</div>
+                <div class="tab-data"><img class="card-qrcode" src="{{ url_for('url.qr_code', short_id=urd.short_id)}}" alt="QR Code">
+                    <br>
+                    <center><a href="{{url_for('url.qr_code', short_id=urd.short_id)}}" download="QR_code">Download QRcode </a></center></div>
+                <div class="tab-data"><small class="date">{{urd.created.strftime('%B %d, %Y')}}</small></div>
+                <div class="tab-data"><a href="{{url_for('url.delete', short_id=urd.short_id)}}">
+                    <button class="btn">Delete Link</button></a></div>
+              {% endfor %}
+              
+        </section>
+        <div class="add">
+          <button class="addbtn"><a href="{{url_for('url.shorten_url')}}">+ Add</a></button>
+        </div>
     {% else %}
         <div>
           <p>...Brief is the new black. To shorten link, click <a href="{{url_for('url.shorten_url')}}">here</a> </p>

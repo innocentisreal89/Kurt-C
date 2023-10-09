@@ -7,7 +7,9 @@ from extension import cache, limiter
 
 
 
-blp =  Blueprint('url',  __name__, template_folder='templates/url')
+blp =  Blueprint('url',  __name__, template_folder='templates/url', static_folder='static', static_url_path='urls')
+
+
 
 # @blp.route('/')
 # def home():

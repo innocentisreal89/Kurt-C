@@ -1,35 +1,41 @@
 {% extends 'base.html' %} {% block title %}Login{% endblock%} 
 {% block content %}
 
-<form action="{{url_for('auth.login')}}" method="POST">
-  <div>
+<form action="{{url_for('auth.login')}}" method="POST" class="form">
+  <div class="form-group">
     <center><h1 style="display: inline">Login</h1></center>
   </div>
-  <br>
-  <label for="title">Email</label>
-  <input
-    class="form-control"
-    type="text"
-    name="email"
-    id="title"
-    placeholder="Enter Email"
-    aria-label="Enter Email"
-  />
-  <br>
-  <label for="content">Password</label>
-  <input
-    class="form-control"
-    type="password"
-    name="password"
-    id="password"
-    placeholder="Enter Password"
-    aria-label=" Enter Password"
-  />
-  <br>
-  <input type="submit" value="Login" class="bg-primary" />
+  <div class="form-group">
+    <label for="email">Email<small class="asterisk">*</small></label>
+    <input
+      class="form-control"
+      type="text"
+      name="email"
+      id="title"
+      placeholder="Enter Email"
+      aria-label="Enter Email"
+    />
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password<small class="asterisk">*</small></label>
+    <input
+      class="form-control"
+      type="password"
+      name="password"
+      id="password"
+      placeholder="Enter Password"
+      aria-label=" Enter Password"
+    />
+  </div>
+  
+  <div class="form-group">
+    <input type="submit" value="Login" class="mybtn" />
+  </div>
+  
   <div class="form-group">
     <small>
-      Do not have an account, <a href="{{url_for('auth.register')}}">Create One</a>
+      Don't have an account? <a href="{{url_for('auth.register')}}">Create One</a>
     </small>
   </div>
 </form>

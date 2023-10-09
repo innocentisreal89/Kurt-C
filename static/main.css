@@ -1,0 +1,174 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: rgb(118, 14, 236);
+}
+header{
+    background-color: black;
+    padding: 12px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 52px;
+}
+.logo a{
+    color: white;
+}
+.nav-items{
+    width: 20%;
+    display: flex;
+    justify-content:center;
+    margin-left: 60%;
+    
+}
+.nav-items a{
+    margin-left: 15px;
+    color: white;
+    border: 2px solid white ;
+    font-weight: bold;
+    
+}
+main{
+    min-height: 100vh;
+    
+}
+
+.container{
+    padding-top: 5%;
+    margin:auto;
+    width: 80%;
+    border: 2px solid red;
+}
+footer{
+    padding: 20px;
+    background-color: black;
+    color: white;
+}
+
+.footer a{
+    color: blueviolet;
+}
+
+.message{
+    color:'red';
+    padding:10px
+}
+
+.grid-container{
+    padding: 5px;
+    margin-top: 20px;
+    border: 2px solid yellow;
+    display: grid;
+    /* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
+    grid-template-columns:390px 200px 70px repeat(2,200px) 100px;
+    column-gap: 2px;
+}
+.tab-head{
+    border: 1px solid blueviolet;
+    text-align: center;
+    font-weight: bold;
+    
+}
+.tab-data{
+    /* place-items: center; */
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid palevioletred;
+    /* align-items: baseline; */
+    /* justify-content: center; */
+    align-self: center;
+    word-wrap: break-word;
+    /* overflow-wrap: break-word; */
+    
+    
+}
+.tab-data img{
+    text-align: center;
+    border: 1px solid blue;
+    /* margin-top: 10px; */
+}
+/* .tab-data .link{
+    margin-top: 60px;
+    padding-bottom: 100px;
+    border: 1px solid black;
+    
+} */
+/* .tab-data small{
+    margin-top: 60px;
+    border: 1px solid black;
+    padding-top: 200px;
+    align-items: baseline;
+} */
+.add{
+    border: 1px solid blue;
+    margin-left: 95%;
+}
+.tab-data .btn{
+    background-color: rgb(233, 17, 17); 
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    transition: all 1.2s; 
+    /* transition: 0.3s;  */
+    cursor: pointer;
+    height: 20px;
+
+}
+.btn:hover{
+    background-color: rgb(21, 20, 20);
+}
+/* .btn{
+   height: 10px;
+} */
+.addbtn{
+    padding: 10px;
+    background-color: rgb(33, 185, 56); 
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: all 1.2s; 
+    /* transition: 0.3s;  */
+    cursor: pointer;
+}
+.addbtn:hover{
+    background-color: rgb(8, 133, 58);
+}
+.addbtn a{
+    color: white;
+}
+
+
+
+@media screen and (max-width:767px) and (orientation:portrait){
+    section{
+        width: 90%;
+        margin: auto;
+    }
+    .container{
+        width: 100%;
+    }
+    .note{
+        animation-name: none;
+        margin: 25px auto;
+        text-align: center;
+    }
+    body{
+        width: 100%;
+    }
+    /* .name1{
+        text-align: center;
+    }
+    h2{
+        display: flex;
+        flex-direction: column;
+    }
+    .form{
+        padding: 5px 15px;
+    } */
+}

@@ -1,41 +1,50 @@
 {% extends 'base.html' %} 
 {% block title %} Register {% endblock %} 
 {% block content %}
-<h1>Sign Up screen</h1>
 
-<form method="post" class="signup" action="{{url_for('auth.register')}}">
-  <div>
-    <input type="text" id="username" name="username" placeholder="Username" />
+<form method="post" action="{{url_for('auth.register')}}" class="form">
+  <div class="form-group">
+    <center><h1>Create Account</h1></center>
   </div>
-  <div>
+  <div class="form-group">
+    <label for="username">Username<small class="asterisk">*</small></label>
+    <input type="text"  class="form-control" id="username" name="username" placeholder="Username" />
+  </div>
+  <div class="form-group">
+    <label for="email">Email<small class="asterisk">*</small></label>
     <input
       type="email"
+      class="form-control"
       id="email"
       name="email"
       placeholder="example@domain.com"
     />
   </div>
-  <div>
+  <div class="form-group">
+    <label for="password">Password<small class="asterisk">*</small></label>
     <input
       type="password"
+      class="form-control"
       id="password1"
       name="password"
       placeholder="Enter Password"
     />
   </div>
-  <div>
+  <div class="form-group">
+    <label for="confirm_password">Confirm Password<small class="asterisk">*</small></label>
     <input
       type="password"
+      class="form-control"
       id="password2"
       name="confirm_password"
       placeholder="Confirm Password"
     />
   </div>
 
-  <div>
-    <button type="submit">Submit</button>
+  <div class="form-group">
+    <input type="submit" value="Register" class="mybtn">
   </div>
-  <div>
+  <div class="form-group">
     <small>
        Click <a href="{{url_for('auth.login')}}">here</a> to Login
     </small>
