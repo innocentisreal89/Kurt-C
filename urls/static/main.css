@@ -32,3 +32,11 @@ label{
 .asterisk{
     color: red;
 }
+@media screen and (max-width:767px) and (orientation:portrait){
+    .form{
+        width:80%;
+
+    }
+    
+    
+}

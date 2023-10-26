@@ -39,7 +39,7 @@
               <div class="tab-head">New Link</div>
               <div class="tab-head">Clicks</div>
               <div class="tab-head">QRcode</div>
-              <div class="tab-head">Created</div>
+              <div class="tab-head" id="created">Created</div>
               <div class="tab-head"></div>
               {% for urd in urls %}
                 <div class="tab-data"><a href="{{urd.org_url}}" class="link">{{urd.org_url}}</a></div>
@@ -47,8 +47,8 @@
                 <div class="tab-data">{{urd.clicks}}</div>
                 <div class="tab-data"><img class="card-qrcode" src="{{ url_for('url.qr_code', short_id=urd.short_id)}}" alt="QR Code">
                     <br>
-                    <center><a href="{{url_for('url.qr_code', short_id=urd.short_id)}}" download="QR_code">Download QRcode </a></center></div>
-                <div class="tab-data"><small class="date">{{urd.created.strftime('%B %d, %Y')}}</small></div>
+                    <center><a href="{{url_for('url.qr_code', short_id=urd.short_id)}}" download="QR_code">Download </a></center></div>
+                <div class="tab-data" id="time"><small class="date">{{urd.created.strftime('%B %d, %Y')}}</small></div>
                 <div class="tab-data"><a href="{{url_for('url.delete', short_id=urd.short_id)}}">
                     <button class="btn">Delete Link</button></a></div>
               {% endfor %}
