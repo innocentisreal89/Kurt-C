@@ -1,11 +1,8 @@
-# Scissor API
+# Kurt-C
 
 <!-- Back to Top Navigation Anchor -->
 
 <a name="readme-top"></a>
-
-
-<!-- https://user-images.githubusercontent.com/100721103/200149633-373db975-c47f-43a7-9288-f6cbd16e0410.mp4 -->
 
 <br><br>
 <!-- Project Shields -->
@@ -25,12 +22,12 @@
 
 <div>
   <p align="center">
-    <a href="https://github.com/engrmarkk/Scissor API#readme"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/innocentisreal89/Kurt-C/issues#readme"><strong>Explore the docs »</strong></a>
     <br />
     ·
-    <a href="https://github.com/engrmarkk/Scissor API/issues">Report Bug</a>
+    <a href="https://github.com/innocentisreal89/Kurt-C/issues">Report Bug</a>
     ·
-    <a href="https://github.com/engrmarkk/Scissor API/issues">Request Feature</a>
+    <a href="https://github.com/innocentisreal89/Kurt-C/issues">Request Feature</a>
   </p>
 </div>
 
@@ -41,7 +38,7 @@
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-Scissor API">About the project</a>
+      <a href="#about-Kurt-C">About the project</a>
       <ul>
         <li><a href="#features">Features</a></li>
         <li><a href="#built-with">Built With</a></li>
@@ -153,8 +150,8 @@ This project was made possible by:
 [forks-url]: https://github.com/innocentisreal89/Kurt-C/network/members
 [stars-shield]: https://img.shields.io/github/stars/innocentisreal89/Kurt-C.svg?style=for-the-badge
 [stars-url]: https://github.com/innocentisreal89/Kurt-C/stargazers
-[issues-shield]: https://img.shields.io/https://github.com/innocentisreal89/Kurt-C.svg?style=for-the-badge
-[issues-url]: https://github.com/innocentisreal89/Kurt-Cissues
+[issues-shield]: https://img.shields.io/github/issues/innocentisreal89/Kurt-C.svg?style=for-the-badge
+[issues-url]: https://github.com/innocentisreal89/Kurt-C/issues
 [twitter-shield]: https://img.shields.io/badge/-@G_SCience1-1ca0f1?style=for-the-badge&logo=twitter&logoColor=white&link=https://twitter.com/G_Science1
 [twitter-url]: https://twitter.com/G_Science1
 [python]: https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54
